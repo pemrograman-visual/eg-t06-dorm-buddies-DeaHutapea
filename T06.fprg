@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="T05"/>
+        <attribute name="authors" value="USER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 04:36:23 PM"/>
+        <attribute name="created" value="VVNFUjtMQVBUT1AtNVRBNjA4VTE7MjAyNC0xMi0wNDswMzo0Mjo1MiBQTTsyNTk3"/>
+        <attribute name="edited" value="VVNFUjtMQVBUT1AtNVRBNjA4VTE7MjAyNC0xMi0wNDswNDozMDozNSBQTTsyOzI3MDU="/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtVlRCSTNKVFU7MjAyNC0xMi0wNDswNDozNjoyMyBQTTsxOzI5MTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="True" size="19"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <call expression="add(nama)"/>
+            <call expression="ruang(nama)"/>
+            <call expression="output(nama)"/>
+        </body>
+    </function>
+    <function name="add" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <assign variable="nama[0]" expression="&quot;&quot;"/>
+            <assign variable="nama[1]" expression="&quot;&quot;"/>
+            <assign variable="nama[2]" expression="&quot;&quot;"/>
+            <assign variable="nama[3]" expression="&quot;&quot;"/>
+            <assign variable="nama[4]" expression="&quot;&quot;"/>
+            <assign variable="nama[5]" expression="&quot;&quot;"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+        </body>
+    </function>
+    <function name="output" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <if expression="nama[i]=&quot;---&quot;">
+                    <then>
+                        <assign variable="i" expression="i+1"/>
+                    </then>
+                    <else>
+                        <output expression="nama[i]" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="ruang" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="5" direction="inc" step="1">
+                <assign variable="nama[i]" expression="&quot;&quot;"/>
+                <while expression="i&lt;4">
+                    <input variable="nama[i]"/>
+                    <if expression="nama[i]=&quot;---&quot;">
+                        <then>
+                            <assign variable="i" expression="4"/>
+                        </then>
+                        <else>
+                            <assign variable="i" expression="i+1"/>
+                        </else>
+                    </if>
+                </while>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
